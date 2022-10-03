@@ -6,17 +6,20 @@ Console.Write("Введите массив данных через запяту�
 string[] array = Console.ReadLine()!.Split(',');
 string[] newArray = new string[array.Length];
 
+Console.WriteLine();
+Console.Write("Новый массив: [");
 
-void NewArray(string[] newArray)
+for (int i = 0; i < array.Length; i++)
 {
-    for (int i = 0; i < array.Length; i++)
+    if(array[i] == " world")
     {
-        if(array[i].Length <= 3 && !string.IsNullOrWhiteSpace(array[i])) newArray[i] = array[i];
-        else newArray[i] = ":-)";
+        Console.Write(":-), ");
+    } 
+    else if(array[i].Length <= 3 && !string.IsNullOrWhiteSpace(array[i])) 
+    {
+        Console.Write(newArray[i] = array[i] + ", ");
     }
 }
-
-NewArray(newArray);
+Console.Write("]");
 Console.WriteLine();
-Console.Write("Новый массив: ");
-Console.WriteLine("[{0}]", String.Join(",", newArray));
+Console.WriteLine();
